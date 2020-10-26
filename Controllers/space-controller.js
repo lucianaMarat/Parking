@@ -1,26 +1,6 @@
-const model = require("../Models/spaces")
+const model = require("../Models")
 
 
-exports.createSpace = async (req, res, next) => {
-    const space = {
-        numberSpace: req.body.numberSpace,
-        level:req.body.level,
-        occupied: req.body.occupied ? req.body.occupied : false,
-        timeOccupied: req.body.timeOccupied,
-        userId: req.body.userId
-    }
-    try {
-      const result = await space.save();
-      res.status(201).json({
-        message: 'User created',
-        result: result
-      });
-    } catch (e) {
-      res.status(500).json({
-        message: 'Invalid authentification credendials',
-      });
-    }
-  };
 
   exports.assignSpace =  async (req, res) => {
     try {

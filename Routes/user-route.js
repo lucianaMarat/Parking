@@ -5,7 +5,6 @@ const userController = require('../Controllers/user-controller');
 
 router.get('/', function (req, res) {
 	res.json({
-		status : 'API is working!',
 		message: 'Bienvenu a mon API Restful !'
 	});
 });

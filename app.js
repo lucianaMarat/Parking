@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require('cors');
 const userRoutes = require('./Routes/user-route');
 const spaceRoutes = require('./Routes/space-route');
+const adminRoutes = require('./Routes/admin-route');
 const app = express()
 const port =84;
 
@@ -17,6 +18,7 @@ app.get("/", (req, res) => {
   });
 app.use("/api/", userRoutes);
 app.use("/api/", spaceRoutes);
+app.use("/api/", adminRoutes);
 
 app.listen(port, () => {
     console.log("Server connected");

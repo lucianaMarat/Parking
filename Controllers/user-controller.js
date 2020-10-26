@@ -50,7 +50,7 @@ exports.createUser = async (req, res, next) => {
         });
       }
   
-      const token = jwtSign({ email: user.email, id: user.id });
+      const token = jwtSign({ email: user.email, id: id });
   
       res.status(200).json({
         token: token,
@@ -109,7 +109,8 @@ exports.deleteUser = async(req, res) => {
 // (Ca équivaut a une requete SELECT ... WHERE ID = )
 exports.getUser = async(req, res) => {
     const id = req.params.id;
-	model.users.findByPk(id).then(result => {
+  model.users.findByPk(id)
+  .then(result => {
     res.status(200).json(result);
   }).catch(error => {
     res.status(500).json({
