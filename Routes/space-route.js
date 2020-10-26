@@ -10,7 +10,6 @@ router.get('/', function (req, res) {
 	});
 });
 
-router.post('/reservation/create', spaceController.createSpace);
 
 router.put('/users/:userId/reservation', spaceController.assignSpace);
 
